@@ -2,212 +2,300 @@
   <span class="headline">Intro to JavaScript Functions Lab</span>
   <span class="subhead">Exercise</span>
 </h1>
+## Instructions
 
-## Introduction
+In these exercises, you will practice writing functions using the JavaScript concepts you've learned so far.
 
-This lab provides an opportunity to practice defining and calling functions in JavaScript.
+You will use:
 
-### A quick note before you dive in
+- Variables and data types
+- Operators and comparisons
+- `if`, `else if`, and `else` statements
+- Parameters and arguments
+- The `return` keyword
 
-If you find yourself stuck during the lab, we encourage you to revisit the lesson materials first. They're designed to provide you with the information and examples that will help you complete the exercises.
+For each exercise:
 
-If you've revisited the materials and are still facing challenges, don't hesitate to collaborate with your classmates.
+1. Create a function with the name provided.
+2. Add the required parameters.
+3. Write the code inside the function.
+4. Use `return` to send the result back.
+5. Run your JavaScript file with Node.js to test your function.
 
-Lastly, the internet is filled with resources specific to JavaScript functions. Websites like [Google](https://www.google.com/), [MDN Web Docs on Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions), and [Stack Overflow](https://stackoverflow.com/questions/tagged/javascript+functions) are just a few clicks away. Use these as a last resort before reaching out for help.
+The first exercise has been completed for you as an example.
 
-Happy coding!
+> 💡 **Remember:** Your functions should `return` the answer, not `console.log()` it. We've already provided `console.log()` statements to help you test your work.
 
-## Lab Exercises
+---
 
-Copy and paste each of the following exercises into your JavaScript file. To check your work, open the `index.html` file in a web browser and inspect the browser console, or run the JavaScript file directly in your terminal using `node app.js`.
+### Exercise 1: `generateEmail()`
 
-### Exercise 1: `maxOfTwoNumbers()`
+**This exercise has been completed for you.**
+
+Imagine you're building a system that creates email addresses for new employees.
+
+Create a function called `generateEmail()` that:
+
+1. Accepts two parameters: `username` and `domain`.
+2. Combines them into an email address with an `@` symbol between them.
+3. Returns the completed email address as a string.
 
 ```js
-/*
-Exercise 1: maxOfTwoNumbers()
-
-In this exercise, create a function named maxOfTwoNumbers. 
-It should take two numbers as inputs and return the larger number. 
-If they're equal, return either one.
-
-Exercise 1 has been completed for you:
-*/
-
-const maxOfTwoNumbers = (x, y) => {
-  if (x >= y) {
-    return x;
-  } else {
-    return y;
-  }
+function generateEmail(username, domain) {
+  return `${username}@${domain}`
 }
 
-console.log('Exercise 1 Result:', maxOfTwoNumbers(3, 9));
+// Test the function
+console.log('Exercise 1 Result:', generateEmail("sara", "company.com")) // sara@company.com
+console.log('Exercise 1 Result:', generateEmail("ali", "example.com")) // ali@example.com
+console.log('Exercise 1 Result:', generateEmail("fatima", "school.edu")) // fatima@school.edu
 ```
 
-### Exercise 2: `isAdult()`
+**Try it:** Change the arguments in one of the function calls to create a different email address.
+
+Notice how the function works with different usernames and domains without changing the code inside the function.
+
+---
+
+### Exercise 2: `greetUser()`
+
+Imagine you're building a website that welcomes users when they sign in.
+
+Create a function called `greetUser()` that:
+
+1. Accepts two parameters: `name` and `timeOfDay`.
+2. Uses those parameters to create a greeting.
+3. Returns the greeting as a string.
+
+The `timeOfDay` argument will be `"morning"`, `"afternoon"`, or `"evening"`.
+
+> 💡 **Hint:** You don't need an `if` statement for this exercise. Think about how you can use a template literal to create the greeting.
+
+**Example:** `greetUser("Sara", "morning")` should return `"Good morning, Sara!"`.
 
 ```js
-/*
-Exercise 2: isAdult()
-
-Write a function named isAdult. It should take an age (number) 
-and return 'Adult' if the age is 18 or over and 'Minor' otherwise.
-
-Example: isAdult(21) should return 'Adult'.
-
-Complete the exercise in the space below:
-*/
+// Write your function here
 
 
 
-console.log('Exercise 2 Result:', isAdult(21));
+// Test your function
+console.log('Exercise 2 Result:', greetUser("Sara", "morning")) // Good morning, Sara!
+console.log('Exercise 2 Result:', greetUser("Ali", "afternoon")) // Good afternoon, Ali!
+console.log('Exercise 2 Result:', greetUser("Fatima", "evening")) // Good evening, Fatima!
 ```
 
-### Exercise 3: `isCharAVowel()`
+---
+
+### Exercise 3: `calculateVAT()`
+
+In Bahrain, the standard Value Added Tax (VAT) rate is 10%.
+
+Create a function called `calculateVAT()` that:
+
+1. Accepts two parameters: `price` and `vatPercentage`.
+2. Calculates the VAT amount using the provided percentage.
+3. Returns the VAT amount, **not the total price**.
+
+For example, if an item costs 50 BHD and the VAT rate is 10%, the VAT amount is 5 BHD.
+
+> 💡 **Hint:** To calculate a percentage, divide it by 100. For example, 10% of 50 is `50 * (10 / 100)`.
 
 ```js
-/*
-Exercise 3: isCharAVowel()
-
-Write a function named isCharAVowel that takes a single character as 
-an argument. It should return true if the character is a vowel and 
-false otherwise. For the purposes of this exercise, the character 
-y should not be considered a vowel.
-
-Example: isCharAVowel('a') should return true.
-
-Complete the exercise in the space below:
-*/
+// Write your function here
 
 
 
-console.log('Exercise 3 Result:', isCharAVowel("a"));
+// Test your function
+console.log('Exercise 3 Result:', calculateVAT(50, 10)) // 5
+console.log('Exercise 3 Result:', calculateVAT(100, 10)) // 10
+console.log('Exercise 3 Result:', calculateVAT(200, 5)) // 10
 ```
 
-### Exercise 4: `generateEmail()`
+---
+
+### Exercise 4: `isAdult()`
+
+Now let's practice using conditional statements inside a function.
+
+Create a function called `isAdult()` that:
+
+1. Accepts one parameter: `age`.
+2. Uses an `if...else` statement to check the age.
+3. Returns the string `"Adult"` if the age is 18 or older.
+4. Returns the string `"Minor"` if the age is younger than 18.
+
+> 💡 **Hint:** You can use the greater than or equal to operator (`>=`) to check the age.
 
 ```js
-/*
-Exercise 4: generateEmail()
-
-Create a function named generateEmail. It should take two strings: 
-a name and a domain. It should return a simple email address.
-
-Example: generateEmail('johnsmith', 'example.com') 
-should return 'johnsmith@example.com'.
-
-Complete the exercise in the space below:
-*/
+// Write your function here
 
 
 
-console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
+// Test your function
+console.log('Exercise 4 Result:', isAdult(21)) // Adult
+console.log('Exercise 4 Result:', isAdult(15)) // Minor
+console.log('Exercise 4 Result:', isAdult(18)) // Adult
 ```
 
-### Exercise 5: `greetUser()`
+---
+
+### Exercise 5: `maxOfTwoNumbers()`
+
+Create a function called `maxOfTwoNumbers()` that:
+
+1. Accepts two parameters: `numA` and `numB`.
+2. Uses an `if...else` statement to compare the two numbers.
+3. Returns the larger number.
+4. If both numbers are equal, returns that number.
+
+> 💡 **Hint:** You can use `>=` to compare the two numbers. Remember that `return` immediately stops the function.
 
 ```js
-/*
-Exercise 5: greetUser()
-
-Define a function called greetUser. It should take a name and a 
-time of day (morning, afternoon, evening) and return a personalized 
-greeting.
-
-Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
-
-Complete the exercise in the space below:
-*/
+// Write your function here
 
 
 
-console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
+// Test your function
+console.log('Exercise 5 Result:', maxOfTwoNumbers(3, 9)) // 9
+console.log('Exercise 5 Result:', maxOfTwoNumbers(15, 4)) // 15
+console.log('Exercise 5 Result:', maxOfTwoNumbers(7, 7)) // 7
 ```
 
-### Exercise 6: `maxOfThree()`
+---
+
+### Exercise 6: `isCharAVowel()`
+
+A **vowel** is one of these letters: `a`, `e`, `i`, `o`, or `u`.
+
+Create a function called `isCharAVowel()` that:
+
+1. Accepts one parameter: `char`.
+2. Checks whether `char` is a vowel.
+3. Returns the boolean `true` if it is a vowel.
+4. Returns the boolean `false` if it is not a vowel.
+
+For this exercise, you can assume all letters are lowercase. The letter `y` is not considered a vowel.
+
+> 💡 **Hint:** You can use the strict equality operator (`===`) and the OR operator (`||`) to check multiple conditions.
 
 ```js
-/*
-Exercise 6: maxOfThree()
-
-Define a function, maxOfThree. It should accept three numbers 
-and return the largest among them.
-
-Example: maxOfThree(17, 4, 9) should return 17.
-
-Complete the exercise in the space below:
-*/
+// Write your function here
 
 
 
-console.log('Exercise 6 Result:', maxOfThree(5, 10, 8));
+// Test your function
+console.log('Exercise 6 Result:', isCharAVowel("a")) // true
+console.log('Exercise 6 Result:', isCharAVowel("e")) // true
+console.log('Exercise 6 Result:', isCharAVowel("b")) // false
+console.log('Exercise 6 Result:', isCharAVowel("y")) // false
 ```
 
-### Exercise 7: `calculateTip()`
+---
+
+### Exercise 7: `maxOfThree()`
+
+In Exercise 5, you wrote a function that compared two numbers. Now let's try comparing three!
+
+Create a function called `maxOfThree()` that:
+
+1. Accepts three parameters: `numA`, `numB`, and `numC`.
+2. Uses conditional statements to compare the three numbers.
+3. Returns the largest number.
+
+If two or more numbers are equal and are the largest, return that number.
+
+> 💡 **Hint:** You can use `if`, `else if`, and `else` statements. You can also use the AND operator (`&&`) to check whether a number is greater than or equal to both other numbers.
 
 ```js
-/*
-Exercise 7: calculateTip()
-
-Create a function called calculateTip. It should take two arguments: 
-the bill amount and the tip percentage (as a whole number). 
-The function should return the amount of the tip.
-
-Example: calculateTip(50, 20) should return 10.
-
-Complete the exercise in the space below:
-*/
+// Write your function here
 
 
 
-console.log('Exercise 7 Result:', calculateTip(50, 20));
+// Test your function
+console.log('Exercise 7 Result:', maxOfThree(5, 10, 8)) // 10
+console.log('Exercise 7 Result:', maxOfThree(20, 5, 10)) // 20
+console.log('Exercise 7 Result:', maxOfThree(3, 7, 15)) // 15
+console.log('Exercise 7 Result:', maxOfThree(8, 8, 4)) // 8
 ```
+
+---
 
 ### Exercise 8: `convertTemperature()`
 
+Create a function called `convertTemperature()` that converts temperatures between Celsius and Fahrenheit.
+
+Your function should:
+
+1. Accept two parameters: `temperature` and `scale`.
+2. If `scale` is `"C"`, convert the temperature from Celsius to Fahrenheit.
+3. If `scale` is `"F"`, convert the temperature from Fahrenheit to Celsius.
+4. Return the converted temperature as a number.
+
+For this exercise, you can assume `scale` will always be either `"C"` or `"F"`.
+
+**Use these formulas:**
+
+Celsius to Fahrenheit:
+
 ```js
-/*
-Exercise 8: convertTemperature()
-
-Write a function named convertTemperature. 
-It takes two arguments: a temperature and a string representing the 
-scale ('C' for Celsius, 'F' for Fahrenheit). 
-Convert the temperature to the other scale.
-
-Example: convertTemperature(32, 'C') should return 89.6 (Fahrenheit).
-Example: convertTemperature(32, 'F') should return 0 (Celsius).
-
-Complete the exercise in the space below:
-*/
-
-
-
-console.log('Exercise 8 Result:', convertTemperature(32, "C"));
+(temperature * 9 / 5) + 32
 ```
+
+Fahrenheit to Celsius:
+
+```js
+(temperature - 32) * 5 / 9
+```
+
+> 💡 **Hint:** Use an `if...else` statement to decide which formula to use.
+
+```js
+// Write your function here
+
+
+
+// Test your function
+console.log('Exercise 8 Result:', convertTemperature(0, "C")) // 32
+console.log('Exercise 8 Result:', convertTemperature(32, "C")) // 89.6
+console.log('Exercise 8 Result:', convertTemperature(32, "F")) // 0
+console.log('Exercise 8 Result:', convertTemperature(212, "F")) // 100
+```
+
+---
 
 ### Exercise 9: `basicCalculator()`
 
+For your final exercise, you'll create a simple calculator that can perform four different operations.
+
+Create a function called `basicCalculator()` that:
+
+1. Accepts three parameters: `numA`, `numB`, and `operation`.
+2. Checks the value of `operation` using conditional statements.
+3. Performs the correct calculation.
+4. Returns the result.
+
+The `operation` parameter will be one of these strings:
+
+- `"add"` — Add the two numbers.
+- `"subtract"` — Subtract `numB` from `numA`.
+- `"multiply"` — Multiply the two numbers.
+- `"divide"` — Divide `numA` by `numB`.
+
+For this exercise, you can assume that the operation will always be valid and that you will not divide by zero.
+
+> 💡 **Hint:** Use `if`, `else if`, and `else` statements to check the operation. Remember that you can return the result directly from each condition.
+
 ```js
-/*
-Exercise 9: basicCalculator()
-
-Create a function named basicCalculator. 
-It should take three arguments: two numbers and a string representing 
-an operation ('add', 'subtract', 'multiply', 'divide'). 
-Perform the provided operation on the two numbers. 
-In operations where the order of numbers is important, 
-treat the first parameter as the first operand and the 
-second parameter as the second operand.
-
-Example: basicCalculator(10, 5, 'subtract') should return 5.
-
-Complete the exercise in the space below:
-*/
+// Write your function here
 
 
 
-console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
+// Test your function
+console.log('Exercise 9 Result:', basicCalculator(10, 5, "add")) // 15
+console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract")) // 5
+console.log('Exercise 9 Result:', basicCalculator(10, 5, "multiply")) // 50
+console.log('Exercise 9 Result:', basicCalculator(10, 5, "divide")) // 2
 ```
+
 
 🎉  You did it!  🎉
