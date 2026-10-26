@@ -113,18 +113,18 @@ console.log('Exercise 3 Result:', calculateVAT(200, 5)) // 10
 
 ---
 
-### Exercise 4: `isAdult()`
+### Exercise 4: `checkStock()`
 
-Now let's practice using conditional statements inside a function.
+Imagine you're building an online store. Before customers place an order, you need to check whether a product is available.
 
-Create a function called `isAdult()` that:
+Create a function called `checkStock()` that:
 
-1. Accepts one parameter: `age`.
-2. Uses an `if...else` statement to check the age.
-3. Returns the string `"Adult"` if the age is 18 or older.
-4. Returns the string `"Minor"` if the age is younger than 18.
+1. Accepts one parameter: `quantity`.
+2. Uses an `if...else` statement to check the quantity.
+3. Returns the string `"In stock"` if the quantity is greater than 0.
+4. Returns the string `"Out of stock"` if the quantity is 0.
 
-> 💡 **Hint:** You can use the greater than or equal to operator (`>=`) to check the age.
+> 💡 **Hint:** You can use the greater than operator (`>`) to check whether there are any items available.
 
 ```js
 // Write your function here
@@ -132,11 +132,10 @@ Create a function called `isAdult()` that:
 
 
 // Test your function
-console.log('Exercise 4 Result:', isAdult(21)) // Adult
-console.log('Exercise 4 Result:', isAdult(15)) // Minor
-console.log('Exercise 4 Result:', isAdult(18)) // Adult
+console.log('Exercise 4 Result:', checkStock(10)) // In stock
+console.log('Exercise 4 Result:', checkStock(0))  // Out of stock
+console.log('Exercise 4 Result:', checkStock(1))  // In stock
 ```
-
 ---
 
 ### Exercise 5: `maxOfTwoNumbers()`
